@@ -394,15 +394,123 @@ header .cs-header-wrapper .container-fluid .nav-link.active {
   width: 100%;
   background: #fefbeb;
 }
+.cs-section4 .cs-sec4-head {
+  padding-bottom: 40px;
+}
 .cs-section4 .cs-sec4-background {
   position: absolute;
   z-index: 1;
   background-color: #FDE68A;
   max-width: 1360px;
   width: 100%;
-  height: 320px;
+  height: 420px;
   left: 50%;
-  top: -50px;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
+}
+.cs-section4 .owl-carousel {
+  margin-top: 40px;
+}
+.cs-section4 .owl-carousel .owl-nav {
+  position: absolute;
+  top: -110px;
+  right: 5%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 15px;
+}
+.cs-section4 .owl-carousel .owl-nav button i {
+  padding: 10px;
+  border-radius: 50%;
+  border: 2px solid #78350F;
+  color: #78350F;
+}
+.cs-section4 .owl-carousel .owl-stage-outer {
+  height: 100% !important;
+}
+.cs-section4 .owl-carousel .card {
+  background: #FFFFFF;
+  border-radius: 20px;
+  max-width: 384px;
+  height: 430px;
+  width: 100%;
+  padding: 32px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 16px;
+}
+.cs-section4 .owl-carousel .card .card-head {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 8px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.cs-section4 .owl-carousel .card .card-head img {
+  width: 32px;
+  height: 32px;
+}
+.cs-section4 .owl-carousel .card .card-head .cs-brand {
+  font-size: 24px;
+  line-height: 32px;
+  color: #475569;
+  font-weight: 700;
+  margin: 0;
+}
+.cs-section4 .owl-carousel .card .card-text .cs-desc {
+  font-size: 24px;
+  line-height: 38px;
+  font-size: 400;
+  color: #000000;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.cs-section4 .owl-carousel .card .card-foot {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 16px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.cs-section4 .owl-carousel .card .card-foot img {
+  width: 64px;
+  height: 64px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.cs-section4 .owl-carousel .card .card-foot .cs-textbox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.cs-section4 .owl-carousel .card .card-foot .cs-textbox .cs-desc1 {
+  font-size: 18px;
+  line-height: 26px;
+  color: #000000;
+  font-weight: 400;
+  margin: 0;
+}
+.cs-section4 .owl-carousel .card .card-foot .cs-textbox .cs-desc2 {
+  font-size: 16px;
+  line-height: 24px;
+  color: #475569;
+  font-weight: 400;
+  margin: 0;
 }/*# sourceMappingURL=main.css.map */
