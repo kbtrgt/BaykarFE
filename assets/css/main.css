@@ -1,0 +1,408 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
+@import url("../vendor/bootstrap-5.2/css/bootstrap.min.css");
+@import url("../vendor/fontawesome/css/all.min.css");
+@import url("../vendor/icomoon/style.css");
+* {
+  font-family: "Roboto", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+a, button {
+  text-decoration: none;
+  outline: none;
+  cursor: pointer;
+}
+
+a:hover, a:focus {
+  text-decoration: none;
+  outline: none;
+}
+
+button:hover, button:focus {
+  text-decoration: none;
+  outline: none;
+}
+
+.cs-container {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+header {
+  background-color: #fefbeb;
+}
+header .cs-header-wrapper .container-fluid {
+  padding: 0;
+}
+header .cs-header-wrapper .container-fluid .navbar-brand {
+  font-size: 32px;
+  font-weight: 700;
+  color: #78350F;
+}
+header .cs-header-wrapper .container-fluid .nav-link {
+  color: #78350F;
+  font-weight: 500;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+header .cs-header-wrapper .container-fluid .nav-link.active {
+  color: #78350F;
+  font-weight: 700;
+}
+
+.cs-border-btn {
+  border: 2px solid #78350F;
+  background: transparent;
+  padding: 12px 30px;
+  border-radius: 8px;
+  color: #78350F;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  font-weight: 500;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+}
+.cs-border-btn:hover {
+  background: #78350F;
+  padding: 12px 30px;
+  color: #FFFFFF;
+  border: 2px solid #78350F;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+}
+
+.cs-noborder-btn {
+  border: 2px solid transparent;
+  background: transparent;
+  padding: 12px 30px;
+  border-radius: 8px;
+  color: #78350F;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  font-weight: 500;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+}
+.cs-noborder-btn:hover {
+  background: #fefbeb;
+  padding: 12px 30px;
+  color: #78350F;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  border: 2px solid #78350F;
+}
+
+.cs-white-btn {
+  border: 2px solid #FFFFFF;
+  background: #0F172A;
+  padding: 12px 30px;
+  border-radius: 8px;
+  color: #FFFFFF;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  font-weight: 500;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+}
+.cs-white-btn:hover {
+  background: #FFFFFF;
+  padding: 12px 30px;
+  color: #0F172A;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  border: 2px solid #0F172A;
+}
+
+.cs-global-title {
+  font-size: 56px;
+  line-height: 64px;
+  font-weight: 800;
+  color: #0F172A;
+}
+
+.cs-section1 {
+  padding: 80px 0;
+  background: -webkit-gradient(linear, left top, right bottom, from(#fefbeb), color-stop(53%, #fefbeb), color-stop(53%, #fef3c7), to(#fef3c7));
+  background: linear-gradient(to bottom right, #fefbeb 0%, #fefbeb 53%, #fef3c7 53%, #fef3c7 100%);
+}
+.cs-section1 .cs-sec1-text-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
+}
+.cs-section1 .cs-sec1-text-wrapper .cs-sec1-textbox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 32px;
+}
+.cs-section1 .cs-sec1-text-wrapper .cs-sec1-textbox .cs-title {
+  font-size: 72px;
+  line-height: 80px;
+  font-weight: 800;
+  color: #0F172A;
+}
+.cs-section1 .cs-sec1-text-wrapper .cs-sec1-textbox .cs-desc {
+  font-size: 18px;
+  line-height: 26px;
+  font-weight: 400;
+  color: #0F172A;
+}
+.cs-section1 .cs-sec1-text-wrapper .cs-sec1-textbox .cs-button-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 16px;
+}
+.cs-section1 .cs-sec1-prdctimg-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.cs-section1 .cs-sec1-prdctimg-wrapper .cs-yellow-box {
+  max-width: 367px;
+  max-height: 372px;
+  width: 100%;
+  height: 100%;
+  border-radius: 50px;
+  background-color: #FBBF24;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.cs-section1 .cs-sec-1-card-wrapper {
+  margin-top: 80px;
+}
+.cs-section1 .cs-sec-1-card-wrapper .cs-sec1-card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 16px;
+}
+.cs-section1 .cs-sec-1-card-wrapper .cs-sec1-card-img {
+  position: relative;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+}
+.cs-section1 .cs-sec-1-card-wrapper .cs-sec1-card-img-after {
+  position: absolute;
+  top: 0px;
+  right: -20px;
+}
+.cs-section1 .cs-sec-1-card-wrapper .cs-sec1-card .cs-title {
+  font-size: 20px;
+  line-height: 22px;
+  font-weight: 500;
+  color: #0F172A;
+}
+.cs-section1 .cs-sec-1-card-wrapper .cs-sec1-card .cs-desc {
+  font-size: 18px;
+  line-height: 28px;
+  font-weight: 400;
+  color: #0F172A;
+}
+
+.cs-section2 {
+  padding: 80px 0;
+  background: #0F172A;
+}
+.cs-section2 .cs-sec2-head {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-bottom: 80px;
+  padding-top: 0;
+}
+.cs-section2 .cs-sec2-head .cs-global-title {
+  color: #FFFFFF;
+}
+.cs-section2 .cs-sec2-head .cs-white-btn {
+  padding: 12px 25px;
+  border-radius: 8px;
+  font-size: 24px;
+  line-height: 24px;
+  font-weight: 400;
+  border-width: 2px;
+}
+.cs-section2 .cs-sec2-wrapper {
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.cs-section2 .cs-sec2-wrapper .card {
+  background-color: #0F172A;
+  -webkit-box-shadow: rgba(255, 255, 255, 0.25) 0px 13px 27px -5px, rgba(255, 255, 255, 0.3) 0px 8px 16px -8px;
+          box-shadow: rgba(255, 255, 255, 0.25) 0px 13px 27px -5px, rgba(255, 255, 255, 0.3) 0px 8px 16px -8px;
+  max-width: 395px;
+  width: 100%;
+  border-radius: 10px;
+}
+.cs-section2 .cs-sec2-wrapper .card .card-img-top {
+  height: 220px;
+}
+.cs-section2 .cs-sec2-wrapper .card .card-title {
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 700;
+  color: #FFFFFF;
+}
+.cs-section2 .cs-sec2-wrapper .card .card-text {
+  font-size: 18px;
+  line-height: 26px;
+  font-weight: 400;
+  color: #FFFFFF;
+}
+.cs-section2 .cs-sec2-wrapper .card .cs-white-btn {
+  color: #FFFFFF;
+  font-size: 20px;
+  line-height: 28px;
+  border: 2px solid #FFFFFF;
+  padding: 12px;
+  border-radius: 8px;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  width: 100%;
+  margin-top: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 10px;
+}
+
+.cs-section3 {
+  padding: 160px 80px;
+  background: #fefbeb;
+}
+.cs-section3 .cs-sec3-wrapper {
+  border-radius: 30px;
+  padding: 80px;
+  background-color: #FFFFFF;
+  -webkit-box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+          box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+.cs-section3 .cs-sec3-wrapper .cs-textbox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 24px;
+}
+.cs-section3 .cs-sec3-wrapper .cs-textbox .cs-title {
+  font-size: 56px;
+  line-height: 64px;
+  color: #0F172A;
+}
+.cs-section3 .cs-sec3-wrapper .cs-textbox .cs-sec3-list {
+  padding: 0;
+  list-style: none;
+  max-width: 495px;
+  width: 100%;
+}
+.cs-section3 .cs-sec3-wrapper .cs-textbox .cs-sec3-list li {
+  font-size: 20px;
+  line-height: 28px;
+  color: #0F172A;
+  font-weight: 400;
+  margin-bottom: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 10px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.cs-section3 .cs-sec3-wrapper .cs-sec3-screenbox {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.cs-section3 .cs-sec3-wrapper .cs-sec3-screenbox-img {
+  position: relative;
+  z-index: 2;
+  max-width: 520px;
+  width: 100%;
+  height: 350px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.cs-section3 .cs-sec3-wrapper .cs-sec3-screenbox-after {
+  position: absolute;
+  z-index: 1;
+  top: -140px;
+  left: -40px;
+}
+
+.cs-section4 {
+  padding: 80px 0;
+  position: relative;
+  width: 100%;
+  background: #fefbeb;
+}
+.cs-section4 .cs-sec4-background {
+  position: absolute;
+  z-index: 1;
+  background-color: #FDE68A;
+  max-width: 1360px;
+  width: 100%;
+  height: 320px;
+  left: 50%;
+  top: -50px;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}/*# sourceMappingURL=main.css.map */
