@@ -11,43 +11,54 @@
     body {
         font-family: Arial, sans-serif;
     }
-
+    .global-title{
+        color: #76608b;
+        font-size: 70px;
+        margin: 40px 0;
+        text-align: center;
+    }
     button {
         cursor: pointer;
     }
 
     #cs-container-quiz {
-        max-width: 700px;
+        max-width: 1280px;
         width: 100%;
         margin: 50px auto;
         padding: 20px;
-        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-        border-radius: 8px;
-        background-color: #f9f9f9;
     }
-
+    #js-question-area{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
     #js-question-area button {
         display: block;
         max-width: 500px;
         width: 100%;
+        font-size: 18px;
+        font-weight: 700;
         margin-bottom: 12px;
         text-align: left;
         padding: 10px;
         border: none;
         background-color: transparent;
         border: 2px solid transparent;
+        color: black;
     }
 
     #js-question-area button.active {
-        border: 2px solid #4CAF50;
+        border: 2px solid #76608b;
+        border-radius: 15px;
     }
 
     #cs-next {
         border: none;
-        padding: 10px 20px;
-        background-color: #607d8b;
+        padding: 15px 50px;
+        background-color: #76608b;
+        font-weight: 700;
         color: #ffffff;
-        border-radius: 2px;
+        border-radius: 15px;
+        float: right;
     }
 
     #cs-next:disabled {
@@ -56,12 +67,17 @@
     }
 
     #js-time-count {
-        max-width: 700px;
-        width: 100%;
+        padding: 30px;
+        border: 3px solid #76608b;
+        position: fixed;
+        top: 35px;
+        right: 50px;
+        width: 25px;
         margin: 0 auto;
         font-size: 20px;
         color: #607d8b;
         display: flex;
+        border-radius: 50%;
     }
 
     #js-time-count.deactive {
@@ -69,11 +85,12 @@
     }
 
     #cs-question-title {
-        color: #607d8b;
+        color: #76608b;
     }
 </style>
 
-<body>
+<body style="background-image: url(https://img.freepik.com/free-vector/white-abstract-background_23-2148810113.jpg);background-size: cover; background-repeat: no-repeat;">
+    <h1 class="global-title">QUIZ PAGE</h1>
     <div id="cs-container-quiz">
         <h2 id="cs-question-title"></h2>
         <div id="js-question-area"></div>
@@ -100,7 +117,7 @@
                     for (let i = 0; i < 10; i++) {
                         const post = posts[i];
                         const question = {
-                            text: `Soru ${i + 1}) ${post.title}?`,
+                            text: `Soru ${i + 1}: ${post.title}?`,
                             choices: ["A) " + post.body.split('\n')[0], "B) " + post.body.split('\n')[1], "C) " + post.body.split('\n')[2], "D) " + post.body.split('\n')[3]],
                         };
                         question_list.push(question);
@@ -135,7 +152,7 @@
             $("#cs-next").prop("disabled", true);
 
             countdownInterval = setInterval(() => {
-                $('#js-time-count').text(countdown + " sn sonra yeni soruya geçilecektir. Eski sorulara dönüş mümkün değildir.");
+                $('#js-time-count').text(countdown);
                 countdown--;
                 if (countdown < 0) {
                     clearInterval(countdownInterval);
