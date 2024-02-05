@@ -409,6 +409,7 @@ header .cs-header-wrapper .container-fluid .navbar-toggler:focus {
   z-index: 1;
   top: -140px;
   left: -40px;
+  max-width: 710px;
 }
 
 .cs-section4 {
@@ -444,7 +445,7 @@ header .cs-header-wrapper .container-fluid .navbar-toggler:focus {
 }
 .cs-section4 .owl-carousel .owl-nav {
   position: absolute;
-  top: -115px;
+  top: -140px;
   right: 5%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -828,6 +829,15 @@ header .cs-header-wrapper .container-fluid .navbar-toggler:focus {
 }
 
 /* RESPONSİVE START */
+@media (min-width: 1280px) and (max-width: 1366px) {
+  .cs-section3 .cs-sec3-wrapper .cs-sec3-screenbox-after {
+    position: absolute;
+    z-index: 0;
+    top: -50px;
+    left: -50px;
+    max-width: 600px;
+  }
+}
 @media (min-width: 1024px) and (max-width: 1279px) {
   .cs-container {
     padding: 0 15px;
@@ -1228,6 +1238,14 @@ header .cs-header-wrapper .container-fluid .navbar-toggler:focus {
   }
   .cs-section2 .cs-sec2-wrapper .row {
     gap: 16px;
+  }
+  .cs-section2 .cs-sec2-wrapper .row .col-12 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
   .cs-section3 {
     padding: 15px;

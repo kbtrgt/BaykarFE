@@ -268,6 +268,7 @@ header
                 z-index: 1
                 top: -140px
                 left: -40px
+                max-width: 710px
 .cs-section4
     padding: 80px 0
     position: relative
@@ -291,7 +292,7 @@ header
             justify-content: center
         .owl-nav
             position: absolute
-            top: -115px
+            top: -140px
             right: 5%
             display: flex
             gap: 15px
@@ -563,6 +564,17 @@ header
             font-weight: 400
 
 /* RESPONSİVE START */
+@media (min-width:1280px) and (max-width:1366px)  
+    .cs-section3
+        .cs-sec3-wrapper
+            .cs-sec3-screenbox
+                &-after
+                    position: absolute
+                    z-index: 0
+                    top: -50px
+                    left: -50px
+                    max-width: 600px
+
 @media (min-width:1024px) and (max-width:1279px) 
     .cs-container
         padding: 0 15px
@@ -856,6 +868,9 @@ header
         .cs-sec2-wrapper
             .row
                 gap: 16px
+                .col-12
+                    display: flex
+                    justify-content: center
     .cs-section3
         padding: 15px
         .cs-sec3-wrapper
