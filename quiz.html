@@ -11,27 +11,39 @@
     body {
         font-family: Arial, sans-serif;
     }
-    .global-title{
+
+    .global-title {
         color: #76608b;
         font-size: 70px;
         margin: 40px 0;
         text-align: center;
     }
+
+    .mini-title {
+        color: #76608b;
+        font-size: 40px;
+        margin: 0;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
     button {
         cursor: pointer;
     }
 
-    #cs-container-quiz {
+    #quiz-wrapper {
         max-width: 1280px;
         width: 100%;
         margin: 50px auto;
         padding: 20px;
     }
-    #js-question-area{
+
+    #question-wrapper {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
     }
-    #js-question-area button {
+
+    #question-wrapper button {
         display: block;
         max-width: 500px;
         width: 100%;
@@ -46,12 +58,12 @@
         color: black;
     }
 
-    #js-question-area button.active {
+    #question-wrapper button.active {
         border: 2px solid #76608b;
         border-radius: 15px;
     }
 
-    #cs-next {
+    #button-next {
         border: none;
         padding: 15px 50px;
         background-color: #76608b;
@@ -61,12 +73,12 @@
         float: right;
     }
 
-    #cs-next:disabled {
+    #button-next:disabled {
         background-color: #ccc;
         cursor: not-allowed;
     }
 
-    #js-time-count {
+    #timer {
         padding: 30px;
         border: 3px solid #76608b;
         position: fixed;
@@ -75,39 +87,55 @@
         width: 25px;
         margin: 0 auto;
         font-size: 20px;
-        color: #607d8b;
+        color: #76608b;
         display: flex;
         border-radius: 50%;
+        height: 25px;
     }
 
-    #js-time-count.deactive {
+    #timer.deactive {
         display: none;
     }
 
-    #cs-question-title {
+    #question-head {
         color: #76608b;
+    }
+
+    table,
+    table tr,
+    table td,
+    table th {
+        color: #76608b;
+        margin: 0 auto;
+        text-align: center;
     }
 </style>
 
-<body style="background-image: url(https://img.freepik.com/free-vector/white-abstract-background_23-2148810113.jpg);background-size: cover; background-repeat: no-repeat;">
+<body
+    style="background-image: url(https://img.freepik.com/free-vector/white-abstract-background_23-2148810113.jpg);background-size: cover; background-repeat: no-repeat;">
     <h1 class="global-title">QUIZ PAGE</h1>
-    <div id="cs-container-quiz">
-        <h2 id="cs-question-title"></h2>
-        <div id="js-question-area"></div>
-        <button id="cs-next" disabled>Next</button>
+    <div id="quiz-wrapper">
+        <h2 id="question-head"></h2>
+        <div id="question-wrapper"></div>
+        <button id="button-next" disabled>Next</button>
     </div>
-    <div id="js-time-count"></div>
+    <div id="timer"></div>
 
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script>
 
-        const question_list = [];
+        const questionArray = [];
         let currentIndex = 0;
-        let answers = [];
-        let countdownInterval;
+        let answersArray = [];
+        let currentAnswer = null; 
+        let count;
 
         $(document).ready(function () {
-            $("#cs-next").on("click", function () {
+            $("#question-wrapper button").on('click', function () {
+                var buttonClass = $(this);
+                console.log(buttonClass);
+            });
+            $("#button-next").on("click", function () {
                 nextQuestion();
             });
 
@@ -117,84 +145,88 @@
                     for (let i = 0; i < 10; i++) {
                         const post = posts[i];
                         const question = {
-                            text: `Soru ${i + 1}: ${post.title}?`,
+                            text: `Question ${i + 1}: ${post.title}?`,
                             choices: ["A) " + post.body.split('\n')[0], "B) " + post.body.split('\n')[1], "C) " + post.body.split('\n')[2], "D) " + post.body.split('\n')[3]],
                         };
-                        question_list.push(question);
+                        questionArray.push(question);
                     }
-                    console.log(question_list);
+                    console.log(questionArray);
                     showQuestion();
                 })
                 .catch(error => console.error('Veri çekme hatası:', error));
         });
 
         function showQuestion() {
-            let countdown = 30;
-            const questionText = $("#cs-question-title");
-            const optionsContainer = $("#js-question-area");
-            const currentq = question_list[currentIndex];
+            let countdown = 29;
+            const questionText = $("#question-head");
+            const answerWrap = $("#question-wrapper");
+            const currentQuestions = questionArray[currentIndex];
 
-            $('#js-time-count').removeClass('deactive');
-            clearInterval(countdownInterval);
+            $('#timer').removeClass('deactive');
+            clearInterval(count);
 
-            questionText.text(currentq.text);
-            optionsContainer.html("");
+            questionText.text(currentQuestions.text);
+            answerWrap.html("");
 
-            currentq.choices.forEach((choice, index) => {
+            currentQuestions.choices.forEach((choice, index) => {
                 const button = $("<button>").text(choice).on("click", function () {
-                    $('#js-question-area button').removeClass("active");
+                    $('#question-wrapper button').removeClass("active");
                     $(this).addClass("active");
-                    answerQuestion(choice[0]);
+                    currentAnswer = choice[0]; 
                 }).prop("disabled", true);
-                optionsContainer.append(button);
+                answerWrap.append(button);
             });
 
-            $("#cs-next").prop("disabled", true);
+            $("#button-next").prop("disabled", true);
 
-            countdownInterval = setInterval(() => {
-                $('#js-time-count').text(countdown);
+            count = setInterval(() => {
+                $('#timer').text(countdown);
                 countdown--;
                 if (countdown < 0) {
-                    clearInterval(countdownInterval);
+                    clearInterval(count);
                     nextQuestion();
                 }
             }, 1000);
 
             setTimeout(() => {
-                $("#js-question-area button").prop("disabled", false);
-                $("#cs-next").prop("disabled", false);
-            }, 10000);
+                $("#question-wrapper button").prop("disabled", false);
+                $("#button-next").prop("disabled", false);
+            }, 1000);
         }
 
-        function answerQuestion(userChoice) {
-            if (!answers[currentIndex]) {
-                answers[currentIndex] = { question: currentIndex + 1, answer: userChoice };
-            }
-            $("#cs-next").prop("disabled", false);
+        function answerQuestion(selectedAnswer) {
+            currentAnswer = selectedAnswer;
+            $("#button-next").prop("disabled", false);
         }
 
         function nextQuestion() {
-            if (currentIndex < question_list.length - 1) {
+            if (currentIndex < questionArray.length - 1) {
+                if (currentAnswer) {
+                    answersArray[currentIndex] = { question: currentIndex + 1, answer: currentAnswer };
+                }
                 currentIndex++;
                 showQuestion();
             } else {
+                if (currentAnswer) {
+                    answersArray[currentIndex] = { question: currentIndex + 1, answer: currentAnswer };
+                }
                 showResults();
             }
         }
 
         function showResults() {
-            const resultArea = $("#cs-container-quiz");
-            resultArea.html("<h1>ANSWERS</h1>");
+            const resultArea = $("#quiz-wrapper");
+            resultArea.html("<h1 class='mini-title'>ANSWERS</h1>");
 
-            const resultsList = $("<table>").html("<tr><th>Q</th><th>A</th></tr>");
+            const resultsList = $("<table>").html("<tr><th>Questions</th><th>Answers</th></tr>");
 
-            answers.forEach(answer => {
+            answersArray.forEach(answer => {
                 const row_ans = $("<tr>").html(`<td>${answer.question}</td><td>${answer.answer}</td>`);
                 resultsList.append(row_ans);
             });
 
             resultArea.append(resultsList);
-            $('#js-time-count').addClass('deactive');
+            $('#timer').addClass('deactive');
         }
 
     </script>
